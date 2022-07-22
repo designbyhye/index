@@ -6,18 +6,19 @@
         <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <script src="https://kit.fontawesome.com/fb34744a8e.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
         <link rel="stylesheet" type="text/css" href="/index/hwIndexcss.css">
         <link rel="stylesheet" type="text/css" media="all and (max-width: 1024px)" href="/index/hwIndexcssT.css">
         <link rel="stylesheet" type="text/css" media="all and (max-width: 767px)" href="/index/hwIndexcssM.css">
     </head>
     <body>
         <div class="wrap">
+            <div class="noite"></div>
+            <div class="constelacao"></div>
+            <div class="chuvaMeteoro"></div>
             <div class="myslider">
                 <div class="main">
-                    <div class="text__wrap"><span class="text text--1"></span>
-                        <svg class="logo" viewBox="0 0 1920 1080">
-                        </svg><span class="text text--2"></span>
+                    <div class="container">
+                        <span class="txt anim-text-flow">PORTFOLIO</span>
                     </div>
                     <div class="scroll-downs">
                         <div class="mousey">
@@ -59,18 +60,23 @@
                         <a href="mailto:seo421717@gmail.com">Contact : seo421717@gmail.com</a>
                     </div>
                 </div>
-                <div class="publi">
+                <div class="publi pop">
                     <ul class="proj_list">
-                        <li class="projA"><a href="#">Project A</a></li>
-                        <li class="projB"><a href="#">Project B</a></li>
-                        <li class="projC"><a href="#">Project C</a></li>
+                        <li data id="pop1" class="on"><a href="#">Project A</a></li>
+                        <li data id="pop2"><a href="#">Project B</a></li>
+                        <li data id="pop3"><a href="#">Project C</a></li>
+                        <li data id="pop4"><a href="#">Design</a></li>
                     </ul>
                     <!-- 팝업 -->
-                    <div class="popupA">
+                    <div id="pop1" class="popupA on">
                         <div class="projABox">
                             <div class="projTitle">
                                 <h2>CJ ENM</h2>
-                                <a href="https://runauxlabs.github.io/portfolio/ui/shw_ui.pdf"><h4>UI 정의서</h4></a>
+                                <div class="butt">
+                                    <a href="https://runauxlabs.github.io/portfolio/ui/shw_ui.pdf"><h4>UI 정의서</h4></a>
+                                    <a href="https://designbyhye.github.io/cjenm/cjenm.html" target="_blank"><h4>사이트접속</h4></a>
+                                    <a href="/index/projA.html" target="_blank"><h4>사이트설명</h4></a>
+                                </div>
                             </div>
                             <div class="projSub">
                                 <div class="projDetail">
@@ -102,7 +108,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="projAbg"><a href="/index/projA.html"><i class="fa-solid fa-circle-plus"></i></a></div>
+                                <div class="projAbg">
+                                    <a href="/index/projA.html"><i class="fa-solid fa-circle-plus"></i>
+                                        <h4>프로젝트<br>상세설명<br>페이지</h4>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -110,6 +120,10 @@
                         <div class="projBBox">
                             <div class="projTitle">
                                 <h2>빙그레</h2>
+                                <div class="butt">
+                                    <a href="https://designbyhye.github.io/binggrae/binggrae.html" target="_blank"><h4>사이트접속</h4></a>
+                                    <a href="/index/projB.html" target="_blank"><h4>사이트설명</h4></a>
+                                </div>
                             </div>
                             <div class="projSub">
                                 <div class="projDetail">
@@ -144,14 +158,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="projBbg"><a href="/index/projB.html"><i class="fa-solid fa-circle-plus"></i></a></div>
+                                <div class="projBbg">
+                                    <a href="/index/projB.html"><i class="fa-solid fa-circle-plus"></i>
+                                        <h4>프로젝트<br>상세설명<br>페이지</h4>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="popupC">
                         <div class="projCBox">
                             <div class="projTitle">
-                                <h2>인쇄주문 자동계산 - 템플릿</h2>
+                                <h2>인쇄주문계산-템플릿</h2>
+                                <div class="butt">
+                                    <a href="https://designbyhye.github.io/printorder/main.html" target="_blank"><h4>사이트접속</h4></a>
+                                    <a href="/index/projC.html" target="_blank"><h4>사이트설명</h4></a>
+                                </div>
                             </div>
                             <div class="projSub">
                                 <div class="projDetail">
@@ -183,29 +205,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="projCbg"><a href="/index/projC.html"><i class="fa-solid fa-circle-plus"></i></a></div>
+                                <div class="projCbg">
+                                    <a href="/index/projC.html"><i class="fa-solid fa-circle-plus"></i>
+                                        <h4>프로젝트<br>상세설명<br>페이지</h4>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="proj4_design">
-                    <h1>Editorial Design</h1>
-                    <div class="mockup">
-                        <div class="design1"></div>
-                        <div class="design2"></div>
-                        <div class="design3"></div>
-                        <div class="design4"></div>
-                        <div class="design5"></div>
-                        <div class="design6"></div>
-                    </div>
-                </div>
             </div>
         </div>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="/index/js/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="/index/lib/slick-1.8.1/slick/slick.min.js"></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/plugins/TextPlugin.min.js'></script>
         <script src="/index/hwIndexjs.js"></script>
     </body>
 </html>

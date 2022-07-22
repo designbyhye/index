@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+html{
+    font-size: 14px;
+}
+body{
+    min-width: 768px;
+}
+.skill > h1{
+    padding: 40px 0;
+}
+.aboutD{
+    flex-direction: column;
+    width: 100%;
+    height: 730px;
+    align-items: center;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    height: 230px;
+    width: 410px;
+    border-radius: 30px;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.2);
+    text-align: center;
+    justify-content: space-around;
+}
+.box:first-child{
+    justify-content: space-around;
+}
+.eduD{
+    height: 45%;
+    padding: 0;
+}
+.eduD > h4 > br{
+    display: none;
+}
+.eduD h2{
+    margin: 0;
+}
+.toolIcon{
+    margin: 10px 0;
+}
+.skilD h4{ 
+    padding: 0;
+}
+.email{
+    width: 410px;
+    bottom: 5%;
+}
+.proj_list{
+    left: unset;
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    top: 100px;
+    justify-content: space-between;
+}
+.publi .proj_list > li{
+    margin: 0 10px 0 0;
+}
+.popupA .projABox,
+.popupB .projBBox,
+.popupC .projCBox{
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    height: 72%;
+    width: 75%;
+    padding: 50px;
+}
+.projAbg, .projBbg, .projCbg{
+    top: 0;
+}
+.projTitle{
+    justify-content: center;
+    padding: 0;
+    height: 50px;
+    width: 100%;
+}
+.projSub{
+    margin: 40px 0 0 0;
+    height: 560px;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #ccc;
+}
+.projDetail{
+    padding: 0;
+    width: 65%;
+}
+.concept, .colorfont{
+    height: 35%;
+    padding: 0 0 20px 0;
+}
+.colorfont{
+    padding: 0;
+}
+.crosstool{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    border-bottom: none;
+}
+.color, .font{
+    width: 50%;
+    height: 100%;
+}
+.cross, .tool{
+    width: 100%;
+    height: 100%;
+}
+.cross{
+    border-bottom: 0.5px solid #ccc;
+}
+.tool_icons{
+    position: absolute;
+    right: -55px;
+}
+.projAbg > a{
+    height: 345px;
+}
+.projBbg > a,
+.projCbg > a{
+    height: 250px;
+}
+.projCbg{
+    top: 60px;
+}
+.projBbg > a .fa-solid.fa-circle-plus,
+.projCbg > a .fa-solid.fa-circle-plus{
+    height: 250;
+    line-height: 250px;
+}
+.fa-solid.fa-circle-plus{
+    height: 345px;
+    line-height: 345px;
+}
+.projAbg > a > h4{
+    padding: 140px 0;
+    height: 345px;
+}
+.projBbg > a > h4,
+.projCbg > a > h4{
+    padding: 80px 0;
+    height: 250px;
+}
+.projCBox .projTitle > a{
+    padding: 0 100px 0 0;
+}
+.projCBox .projTitle > a{
+    position: relative;
+}
+.projCBox .projTitle > a > h4{
+    position: absolute;
+    right: 15px;
+    margin: 10px 0 0 0;
+}
+.font_sub{
+padding: 25px 0 0 0;
+}

@@ -6,6 +6,8 @@
 /* Noto Sans */
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 /* Black Han Sans */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+/* 'Russo One', sans-serif; */
 *{
     margin: 0;
     padding: 0;
@@ -30,7 +32,146 @@ a{
 }
 .wrap{
     position: relative;
+    overflow: hidden;
 }
+
+/* 배경 */
+.noite {
+    background: -webkit-linear-gradient(top, rgb(0, 0, 0) 50%, rgb(25, 19, 39)80%, rgb(43, 32, 72));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    z-index: -10;
+}
+.constelacao {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation: rotate 300s infinite linear;
+}
+.estrela {
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    animation-name: estrela;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.estrela.style1 { animation-duration: 0.5s; animation-name: estrela; }
+.estrela.style2 { animation-duration: 1s; animation-name: estrela; }
+.estrela.style3 { animation-duration: 1.5s; animation-name: estrela; }
+.estrela.style4 { animation-duration: 2s; animation-name: estrelaDestacada; }
+
+.estrela.tam1 { width: 1px; height: 1px; }
+.estrela.tam2 { width: 2px; height: 2px; }
+.estrela.tam3 { width: 3px; height: 3px; }
+.estrela.opacity1 { opacity:  1; }
+.estrela.opacity2 { opacity: .5; }
+.estrela.opacity3 { opacity: .1; }
+
+.meteoro {
+    position: absolute;
+    background-color: #fff;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    transform: rotate(-35deg);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+.meteoro:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 0;
+    height: 0;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-left: 85px solid white;
+    position: absolute;
+    left: 2px;
+    top: 0;
+}
+.meteoro.style1 { animation-name: meteoroStyle1; }
+.meteoro.style2 { animation-name: meteoroStyle2; }
+.meteoro.style3 { animation-name: meteoroStyle3; }
+.meteoro.style4 { animation-name: meteoroStyle4; }
+
+@keyframes estrela {
+    0% {
+        box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
+    }
+    50% {
+        box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
+    }
+}
+
+@keyframes estrelaDestacada {
+    0% {
+        background-color: #FFFFFF;
+        box-shadow: 0 0 10px 0px rgba(255, 255, 255, 1);
+    }
+    20% {
+        background-color: #FFC4C4;
+        box-shadow: 0 0 10px 0px rgb(255, 196, 196, 1);
+    }
+    80% {
+        background-color: #C4CFFF;
+        box-shadow: 0 0 10px 0px rgb(196, 207, 255, 1);
+    }
+    100% {
+        background-color: #FFFFFF;
+        box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes meteoroStyle1 {
+    0% { opacity: 0; right: 300px; top: 100px; }
+    30% { opacity: .3; }
+    60% { opacity: .3; }
+    100% { opacity: 0; right: 1000px; top: 600px; }
+}
+
+@keyframes meteoroStyle2 {
+    0% { opacity: 0; right: 700px; top: 100px; }
+    30% { opacity: 1; }
+    60% { opacity: 1; }
+    100% { opacity: 0; right: 1400px; top: 600px; }
+}
+
+@keyframes meteoroStyle3 {
+    0% { opacity: 0; right: 300px; top: 300px; }
+    30% { opacity: 1; }
+    60% { opacity: 1; }
+    100% { opacity: 0; right: 1000px; top: 800px; }
+}
+
+@keyframes meteoroStyle4 {
+    0% { opacity: 0; right: 700px; top: 300px; }
+    30% { opacity: 1; }
+    60% { opacity: 1; }
+    100% { opacity: 0; right: 1400px; top: 800px; }
+}
+
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
 .myslider{
     width: 100%;
     overflow: hidden hidden;
@@ -58,46 +199,109 @@ a{
     background-color: #fff;
 }
 .main{
-    background: url(/index/image/main_bg.png) no-repeat;
-    background-position: center;
-    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
     position: relative;
-}
-.text {
-    font-weight: 700;
-    font-size: 7rem;
-    letter-spacing: -3px;
-}
-.text__wrap {
-    top: -10%;
-    display: flex;
-    position: relative;
-    justify-content: center;
-}
-.text--1 {
-    background-color: rgb(250,250,250);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    overflow: hidden;
+    color: #fefefe;
+    font: 7rem 'Black Han Sans';
+    text-transform: uppercase;
+    letter-spacing: -0.8px;
+    text-rendering: optimizeLegibility;
     text-align: center;
 }
-.text--2 {
-    background-color: rgb(250,250,250);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    text-align: center;
+.anim-text-flow span,
+.anim-text-flow-hover:hover span {
+    animation-name: anim-text-flow-keys;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
 }
+@keyframes anim-text-flow-keys {
+   0% {
+     color: #d65c64;
+   }
+   5% {
+     color: #5cd691;
+   }
+   10% {
+     color: #d65ca5;
+   }
+   15% {
+     color: #5cd69d;
+   }
+   20% {
+     color: #5cc4d6;
+   }
+   25% {
+     color: #d65c9d;
+   }
+   30% {
+     color: #d6625c;
+   }
+   35% {
+     color: #c0d65c;
+   }
+   40% {
+     color: #5cd695;
+   }
+   45% {
+     color: #d68b5c;
+   }
+   50% {
+     color: #d65e5c;
+   }
+   55% {
+     color: #b45cd6;
+   }
+   60% {
+     color: #a3d65c;
+   }
+   65% {
+     color: #7c5cd6;
+   }
+   70% {
+     color: #85d65c;
+   }
+   75% {
+     color: #d66e5c;
+   }
+   80% {
+     color: #7a5cd6;
+   }
+   85% {
+     color: #d6bc5c;
+   }
+   90% {
+     color: #5cd6ad;
+   }
+   95% {
+     color: #6cd65c;
+   }
+   100% {
+     color: #b4d65c;
+   }
+}
+.container {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 100%;
+   transform: translate(-50%, -50%);
+}
+.txt {
+   display: block;
+}
+
 .scroll-downs {
     position: absolute;
-    top: 300px;
+    top: 600px;
     right: 0;
-    bottom: 0;
+    bottom: 80px;
     left: 0;
     margin: auto;
     width :60px;
@@ -132,14 +336,13 @@ a{
 .scroll-downs > p{
     padding: 10px 0 0 0;
     color: #fff;
-    font: 200 0.875rem 'Noto Sans KR';
+    font: 0.875rem 'Russo One';
 }
 .skill{
-    background: url(/index/image/about_bg.png) no-repeat;
-    background-position: center;
-    background-size: cover;
+    width: 100vw;
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 .skill > h1{
     font-weight: 700;
@@ -148,12 +351,10 @@ a{
     margin: 0;
     color: #fff;
     text-align: center;
-    padding: 120px 0;
+    padding: 100px 0;
+    font: 5rem 'Russo One';
 }
 .aboutD{
-    background: url(/index/image/about_box.png) no-repeat;
-    background-position: center;
-    background-size: contain;
     display: flex;
     flex-direction: row;
     width: 1300px;
@@ -167,54 +368,40 @@ a{
     height: 400px;
     width: 400px;
     border-radius: 400px;
-    padding: 60px;
+    padding: 30px;
+    background-color: rgba(255,255,255,0.2);
     text-align: center;
-    justify-content: space-around;
-}
-.box:nth-child(2){
-    padding: 60px 25px;
     justify-content: center;
 }
-.box:nth-child(2) h2{
-    margin: 0 0 20px 0;
-    font: 2.25rem 'Black Han Sans';
-}
-.box:nth-child(2) h4{
-    margin: 0 0 5px 0;
-}
 .box:nth-child(2) h4 > small{
-    font: 400 1.125rem 'Noto Sans KR';
+    font: 400 1rem 'Noto Sans KR';
     letter-spacing: -0.2px;
 }
 .carD, .eduD{
-    height: 45%;
+    height: 35%;
     padding: 0 10px;
 }
 .eduD{
     padding: 15px 0 10px 0;
 }
 .box h2{
-    font: 2rem 'Black Han Sans';
+    font: 2.5rem 'Russo One';
     letter-spacing: -0.5px;
     text-align: center;
-    background: linear-gradient(to right, #7b3dd9, #16cabd);
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;   
-}
-.box:last-child > h2{
-    padding: 20px 0 0 0;
+    color: #16cabd;
+    margin: 0 0 10px 0;
 }
 .box h4{
     font: 600 1.5rem/1.3 'Noto Sans KR';
     letter-spacing: -1px;
     color: #fff;
+    margin: 0 0 5px 0;
 }
 .skilD h4{
     font: 600 1.25rem/1.4 'Noto Sans KR';
     letter-spacing: -1px;
     color: #fff; 
-    padding: 0 0 30px 0;
+    padding: 20px 0;
 }
 .box p{
     font: 400 1rem 'Noto Sans KR';
@@ -229,11 +416,11 @@ a{
     height: 60px;
 }
 .email{
-    width: 30%;
+    width: 500px;
     height: 60px;
     background-color: rgba(255,255,255,0.2);
     position: absolute;
-    bottom: 15%;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -243,25 +430,23 @@ a{
     display: block;
     height: 60px;
     line-height: 60px;
-    font-family: 'Noto Sans KR';
+    font-family: 'Russo One';
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     text-align: center;
     color: #fff;
-    letter-spacing: -0.2px;
+    letter-spacing: 0.2px;
 }
 .email:hover > a{
-    background-color: rgb(0,0,80);
+    background-color: rgb(43, 32, 72);
     color: #fff;
     border-radius: 10px;
 }
 .publi{
-    background: url(/index/image/proj-publishing.png) no-repeat;
-    background-position: center;
-    background-size: cover;
     width: 100%;
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 .proj_list{
     width: 200px;
@@ -274,9 +459,14 @@ a{
     width: 150px;
     height: 50px;
     border-radius: 12px;
-    background: linear-gradient(to right, #7b3dd9, #16cabd);
+    background: #fff;
     margin: 0 0 20px 0;
     box-shadow: 6px 6px rgba(255,255,255,0.3);
+}
+.pop > ul >li.on > a{
+    background-color: #16cabd;
+    border-radius: 12px;
+    color: #fff;
 }
 .publi .proj_list > li > a{
     display: block;
@@ -284,9 +474,9 @@ a{
     height: 100%;
     line-height: 50px;
     text-align: center;
-    font-family: 'Black Han Sans';
+    font-family: 'Russo One';
     font-size: 1.5rem;
-    color: #fff;
+    color: #16cabd;
 }
 .popupA, .popupB, .popupC{
     display: none;
@@ -296,22 +486,27 @@ a{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(255,255,255,0.6);
 }
 .popupA .projABox,
 .popupB .projBBox,
 .popupC .projCBox{
     position: absolute;
     z-index: 1000;
-    top: 45%;
+    top: 40%;
     left: 55%;
-    transform: translate(-45%, -40%);
+    transform: translate(-50%, -35%);
     background-color: #fff;
     border-radius: 30px;
     height: 80%;
     width: 65%;
     padding: 60px;
     box-shadow: 6px 6px 2px rgba(255,255,255,0.6);
+}
+.pop .popupA{
+    display: none;
+}
+.pop .popupA.on{
+    display: block;
 }
 .projTitle{
     display: flex;
@@ -320,15 +515,30 @@ a{
     padding: 20px 0 20px 20px;
     color: rgb(0,0,80);
     height: 100px;
+    width: 65%;
 }
 .projTitle h2{
     margin: 0 15px 0 0;
+    width: 70%;
 }
-.projTitle > a{
-    line-height: 100px;
+.butt{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+.projTitle > .butt > a{
     padding: 12px 0;
+    margin: 0 10px 0 0;
 }
-.projTitle > a > h4{
+.projABox .projTitle > .butt > a:nth-child(3){
+    display: none;
+}
+.projBBox .projTitle > .butt > a:nth-child(2),
+.projCBox .projTitle > .butt > a:nth-child(2){
+    display: none;
+}
+
+.projTitle > .butt > a > h4{
     font: 400 1.25rem 'Noto Sans KR';
     letter-spacing: -1px;
     color: rgb(0,0,80);
@@ -339,7 +549,7 @@ a{
     line-height: 38px;
     border-radius: 10px;
 }
-.projTitle > a > h4:hover{
+.projTitle > .butt > a > h4:hover{
     background: rgba(0,0,80,0.5);
     color: #fff;
 }
@@ -375,7 +585,7 @@ a{
     width: 30%;
     height: 100%;
     position: relative;
-    top: -40px;
+    top: -86px;
 }
 .projAbg{
     background: url(/index/image/cjenm-pc.png) no-repeat;
@@ -390,12 +600,35 @@ a{
 .projCbg{
     background: url(/index/image/PrintOrder.png) no-repeat;
     background-size: contain;
-    background-position: center;
+    background-position: top center;
 }
 .projAbg > a, .projBbg > a, .projCbg > a{
     display: block;
     width: 100%;
     height: 100%;
+}
+.projAbg > a > h4,
+.projBbg > a > h4,
+.projCbg > a > h4{
+    display: none;
+    font: 600 1.5rem 'Noto Sans KR';
+    letter-spacing: -0.5px;
+    color: #333;
+    text-align: center;
+    height: 600px;
+    position: relative;
+    z-index: 10;
+    padding: 240px 0;
+}
+.projAbg > a:hover,
+.projBbg > a:hover,
+.projCbg > a:hover{
+    background-color: rgba(255,255,255,0.8);
+}
+.projAbg > a:hover > h4,
+.projBbg > a:hover > h4,
+.projCbg > a:hover > h4{
+    display: block;
 }
 .fa-solid.fa-circle-plus{
     font-family: "Font Awesome 5 Free";
@@ -516,70 +749,4 @@ a{
     width: 100%;
     line-height: 35px;
     padding: 0 0 0 180px;
-}
-.proj4_design{
-    background: url(/index/image/about_bg.png) no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    position: relative;
-}
-.proj4_design > h1{
-    font-weight: 700;
-    font-size: 5rem;
-    letter-spacing: -3px;
-    margin: 0;
-    color: #fff;
-    text-align: center;
-    padding: 200px 0 100px 0;
-}
-.mockup{
-    display: flex;
-    width: 90%;
-    height: 550px;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-}
-.design1{
-    width: 32%;
-    height: 45%;
-    background: url(/index/image/mockup1.png) no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.design2{
-    width: 32%;
-    height: 45%;
-    background: url(/index/image/mockup2.png) no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.design3{
-    width: 32%;
-    height: 45%;
-    background: url(/index/image/mockup3.png) no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.design4{
-    width: 32%;
-    height: 45%;
-    background: url(/index/image/mockup4.png) no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.design5{
-    width: 32%;
-    height: 45%;
-    background: url(/index/image/mockup5.png) no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.design6{
-    width: 32%;
-    height: 45%;
-    background: url(/index/image/mockup6.png) no-repeat;
-    background-position: center;
-    background-size: cover;
 }
